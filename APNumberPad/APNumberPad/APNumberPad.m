@@ -124,7 +124,6 @@
     int sections = 3;
     
     CGFloat sep = [self.styleClass separator];
-    CGFloat left = 0.f;
     CGFloat top = 0.f;
     
 #if defined(__LP64__) && __LP64__
@@ -134,7 +133,14 @@
 #endif
     
     CGSize buttonSize = CGSizeMake((CGRectGetWidth(self.bounds) - sep * (sections - 1)) / sections, buttonHeight);
-
+    CGFloat baseLeft = 0.f;
+    CGFloat maxButtonWidth = [self.styleClass maxButtonWidth];
+    if (maxButtonWidth) {
+        buttonSize.width = MIN(maxButtonWidth, buttonSize.width);
+        baseLeft = (CGRectGetWidth(self.bounds) - (buttonSize.width * sections)) * 0.5;
+    }
+    CGFloat left = baseLeft;
+    
     // Number buttons (1-9)
     //
     for (int i = 1; i < self.numberButtons.count - 1; i++) {
@@ -142,7 +148,7 @@
         numberButton.frame = CGRectMake(left, top, buttonSize.width, buttonSize.height);
         
         if (i % sections == 0) {
-            left = 0.f;
+            left = baseLeft;
             top += buttonSize.height + sep;
         } else {
             left += buttonSize.width + sep;
@@ -151,7 +157,7 @@
     
     // Function button
     //
-    left = 0.f;
+    left = baseLeft;
     self.leftButton.frame = CGRectMake(left, top, buttonSize.width, buttonSize.height);
     
     // Number buttons (0)

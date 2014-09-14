@@ -71,5 +71,8 @@ static inline UIColor * APNP_RGBa(int r, int g, int b, CGFloat alpha) {
     return [UIImage imageNamed:@"APNumberPad.bundle/images/apnumberpad_backspace_icon.png"];
 }
 
++ (CGFloat)maxButtonWidth {
+    return 0.f;
+}
 
 @end

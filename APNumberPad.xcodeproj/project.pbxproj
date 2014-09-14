@@ -21,6 +21,7 @@
 		2ACD61AA19260EBD005E5DA5 /* APNumberPadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD61A919260EBD005E5DA5 /* APNumberPadTests.m */; };
 		2ACD620619261A19005E5DA5 /* APNumberPadExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ACD620519261A19005E5DA5 /* APNumberPadExampleViewController.m */; };
 		2ACD620919261D53005E5DA5 /* APNumberPad.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2ACD620819261D53005E5DA5 /* APNumberPad.bundle */; };
+		9702E0BC19C583CE00878ED1 /* iOS7LikePadStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9702E0BB19C583CE00878ED1 /* iOS7LikePadStyle.m */; };
 		B23467A11974A61800FE3F7A /* APNumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B234679C1974A61800FE3F7A /* APNumberButton.m */; };
 		B23467A21974A61800FE3F7A /* APNumberPad.m in Sources */ = {isa = PBXBuildFile; fileRef = B234679E1974A61800FE3F7A /* APNumberPad.m */; };
 		B23467A31974A61800FE3F7A /* APNumberPadDefaultStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = B23467A01974A61800FE3F7A /* APNumberPadDefaultStyle.m */; };
@@ -59,6 +60,8 @@
 		2ACD620419261A19005E5DA5 /* APNumberPadExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APNumberPadExampleViewController.h; sourceTree = "<group>"; };
 		2ACD620519261A19005E5DA5 /* APNumberPadExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APNumberPadExampleViewController.m; sourceTree = "<group>"; };
 		2ACD620819261D53005E5DA5 /* APNumberPad.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = APNumberPad.bundle; sourceTree = "<group>"; };
+		9702E0BA19C583CE00878ED1 /* iOS7LikePadStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOS7LikePadStyle.h; sourceTree = "<group>"; };
+		9702E0BB19C583CE00878ED1 /* iOS7LikePadStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iOS7LikePadStyle.m; sourceTree = "<group>"; };
 		B234679B1974A61800FE3F7A /* APNumberButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APNumberButton.h; sourceTree = "<group>"; };
 		B234679C1974A61800FE3F7A /* APNumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APNumberButton.m; sourceTree = "<group>"; };
 		B234679D1974A61800FE3F7A /* APNumberPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APNumberPad.h; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				B23467A51974A66A00FE3F7A /* APDarkPadStyle.m */,
 				B2DD0319197578030051DD71 /* APBluePadStyle.h */,
 				B2DD031A197578030051DD71 /* APBluePadStyle.m */,
+				9702E0BA19C583CE00878ED1 /* iOS7LikePadStyle.h */,
+				9702E0BB19C583CE00878ED1 /* iOS7LikePadStyle.m */,
 			);
 			path = DemoStyles;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				B23467A31974A61800FE3F7A /* APNumberPadDefaultStyle.m in Sources */,
 				B2DD031B197578030051DD71 /* APBluePadStyle.m in Sources */,
 				B23467A11974A61800FE3F7A /* APNumberButton.m in Sources */,
+				9702E0BC19C583CE00878ED1 /* iOS7LikePadStyle.m in Sources */,
 				B23467A21974A61800FE3F7A /* APNumberPad.m in Sources */,
 				2ACD620619261A19005E5DA5 /* APNumberPadExampleViewController.m in Sources */,
 				2ACD619519260EBD005E5DA5 /* APAppDelegate.m in Sources */,
@@ -419,7 +425,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "APNumberPad/APNumberPad-Prefix.pch";
 				INFOPLIST_FILE = "APNumberPad/APNumberPad-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -432,7 +440,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "APNumberPad/APNumberPad-Prefix.pch";
 				INFOPLIST_FILE = "APNumberPad/APNumberPad-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

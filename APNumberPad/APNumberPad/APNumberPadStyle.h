@@ -24,4 +24,6 @@
 + (UIColor *)functionButtonTextColor;
 + (UIImage *)clearFunctionButtonImage;
 
++ (CGFloat)maxButtonWidth;
+
 @end

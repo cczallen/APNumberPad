@@ -10,6 +10,7 @@
 #import "APNumberPad.h"
 #import "APDarkPadStyle.h"
 #import "APBluePadStyle.h"
+#import "iOS7LikePadStyle.h"
 
 @interface APNumberPadExampleViewController () <APNumberPadDelegate>
 
@@ -39,7 +40,7 @@
         _textField = [[UITextField alloc] initWithFrame:CGRectZero];
         _textField.borderStyle = UITextBorderStyleRoundedRect;
         _textField.inputView = ({
-            APNumberPad *numberPad = [APNumberPad numberPadWithDelegate:self];
+            APNumberPad *numberPad = [APNumberPad numberPadWithDelegate:self numberPadStyleClass:[iOS7LikePadStyle class]];
             
             [numberPad.leftFunctionButton setTitle:@"B" forState:UIControlStateNormal];
             numberPad.leftFunctionButton.titleLabel.adjustsFontSizeToFitWidth = YES;
