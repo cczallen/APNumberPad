@@ -10,11 +10,16 @@
 
 @protocol APNumberPadDelegate;
 
+@class APNumberPad;
+typedef void(^NumberPadDoneBlock)(NSString *text);
+
 ///
 
 @interface APNumberPad : UIView <UIInputViewAudioFeedback>
 
 + (instancetype)numberPadWithDelegate:(id<APNumberPadDelegate>)delegate numberPadStyleClass:(Class)styleClass;
+
++ (instancetype)numberPadWithDone:(NumberPadDoneBlock)doneBlock numberPadStyleClass:(Class)styleClass;
 
 + (instancetype)numberPadWithDelegate:(id<APNumberPadDelegate>)delegate;
 

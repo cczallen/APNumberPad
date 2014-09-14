@@ -55,6 +55,8 @@
  */
 @property (strong, readwrite, nonatomic) Class<APNumberPadStyle> styleClass;
 
+@property (nonatomic, copy) NumberPadDoneBlock doneBlock;
+
 @end
 
 
@@ -62,6 +64,14 @@
 
 + (instancetype)numberPadWithDelegate:(id<APNumberPadDelegate>)delegate {
     return [self numberPadWithDelegate:delegate numberPadStyleClass:nil];
+}
+
++ (instancetype)numberPadWithDone:(NumberPadDoneBlock)doneBlock numberPadStyleClass:(Class)styleClass {
+    APNumberPad *numberPad = [self numberPadWithDelegate:nil numberPadStyleClass:styleClass];
+    [numberPad setDoneBlock:doneBlock];
+    [numberPad.leftFunctionButton setTitle:@"Done" forState:UIControlStateNormal];
+    
+    return numberPad;
 }
 
 + (instancetype)numberPadWithDelegate:(id<APNumberPadDelegate>)delegate numberPadStyleClass:(Class)styleClass{
@@ -410,9 +420,19 @@
     if (!self.textInput) {
         return;
     }
-    
-    if ([self.delegate respondsToSelector:@selector(numberPad:functionButtonAction:textInput:)]) {
-        [self.delegate numberPad:self functionButtonAction:sender textInput:self.textInput];
+    if (self.doneBlock) {
+        NSString *text;
+        if ([self.textInput respondsToSelector:@selector(text)]) {
+            text = [self.textInput performSelector:@selector(text)];
+        }
+        self.doneBlock(text);
+        if ([self.textInput respondsToSelector:@selector(endEditing:)]) {
+            [(id)self.textInput endEditing:YES];
+        }
+    }else {
+        if ([self.delegate respondsToSelector:@selector(numberPad:functionButtonAction:textInput:)]) {
+            [self.delegate numberPad:self functionButtonAction:sender textInput:self.textInput];
+        }
     }
 }
 
