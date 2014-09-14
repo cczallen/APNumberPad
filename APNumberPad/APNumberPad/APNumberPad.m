@@ -70,6 +70,7 @@
     APNumberPad *numberPad = [self numberPadWithDelegate:nil numberPadStyleClass:styleClass];
     [numberPad setDoneBlock:doneBlock];
     [numberPad.leftFunctionButton setTitle:@"Done" forState:UIControlStateNormal];
+    numberPad.leftFunctionButton.titleLabel.adjustsFontSizeToFitWidth = YES;
     
     return numberPad;
 }
