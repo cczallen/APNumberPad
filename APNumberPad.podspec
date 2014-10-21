@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.author       = { 'Andrew Podkovyrin' => 'podkovyrin@gmail.com' }
   s.source       = { :git => 'https://github.com/cczallen/APNumberPad.git', :tag => s.version.to_s }
   s.platform     = :ios, '6.0'
-  s.source_files = 'APNumberPad/APNumberPad/*.{h,m}'
+  s.source_files = 'APNumberPad/APNumberPad/*.{h,m}', 'APNumberPad/DemoStyles/*.{h,m}'
   s.resources = 'APNumberPad/APNumberPad.bundle'
   s.requires_arc = true
 end
